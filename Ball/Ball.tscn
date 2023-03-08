@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Ball/Ball.gd" type="Script" id=1]
-[ext_resource path="res://Assets/ballGrey.png" type="Texture" id=2]
-[ext_resource path="res://Assets/ballBlue.png" type="Texture" id=3]
+[ext_resource path="res://Assets/ballGrey.png" type="Texture2D" id=2]
+[ext_resource path="res://Assets/ballBlue.png" type="Texture2D" id=3]
 
 [sub_resource type="PhysicsMaterial" id=2]
 friction = 0.0
@@ -24,10 +24,10 @@ shape = SubResource( 1 )
 
 [node name="Images" type="Node2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="Images"]
+[node name="Sprite2D" type="Sprite2D" parent="Images"]
 texture = ExtResource( 2 )
 
-[node name="Highlight" type="Sprite" parent="Images"]
+[node name="Highlight" type="Sprite2D" parent="Images"]
 modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 3 )
 

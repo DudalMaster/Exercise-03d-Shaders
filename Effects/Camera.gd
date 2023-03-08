@@ -2,15 +2,15 @@ extends Camera2D
 # Originally developed by Squirrel Eiserloh (https://youtu.be/tu-Qe66AvtY)
 # Refined by KidsCanCode (https://kidscancode.org/godot_recipes/2d/screen_shake/)
 
-export var decay = 2                      # How quickly the shaking stops [0, 1].
-export var max_offset = Vector2(10, 0)    # Maximum hor/ver shake in pixels.
-export var max_roll = 0.05 	                # Maximum rotation in radians (use sparingly).
-export (NodePath) var target                # Assign the node this camera will follow.
+@export var decay = 2                      # How quickly the shaking stops [0, 1].
+@export var max_offset = Vector2(10, 0)    # Maximum hor/ver shake in pixels.
+@export var max_roll = 0.05 	                # Maximum rotation in radians (use sparingly).
+@export (NodePath) var target                # Assign the node this camera will follow.
 
 var trauma = 0.0                            # Current shake strength.
 var trauma_power = 3                        # Trauma exponent. Use [2, 3].
 var max_trauma = 4.0
-onready var noise = OpenSimplexNoise.new()
+@onready var noise = OpenSimplexNoise.new()
 var noise_y = 0
 
 func _ready():

@@ -1,7 +1,7 @@
 extends Node2D
 
-export var margin = Vector2(160,105)
-export var index = Vector2(100,40)
+@export var margin = Vector2(160,105)
+@export var index = Vector2(100,40)
 
 func _ready():
 	if Global.level < 0 or Global.level >= len(Levels.levels):
@@ -17,7 +17,7 @@ func _ready():
 			for rows in range(len(layout)):
 				for cols in range(len(layout[rows])):
 					if layout[rows][cols] > 0:
-						var brick = Brick.instance()
+						var brick = Brick.instantiate()
 						brick.new_position = Vector2(margin.x + index.x*cols, margin.y + index.y*rows)
 						brick.position = Vector2(brick.new_position.x,-100)
 						brick.score = layout[rows][cols]

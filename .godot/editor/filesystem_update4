@@ -1,0 +1,5 @@
+res://default_env.tres
+res://UI/Main_Menu.tscn
+res://UI/UI.tres
+res://Main_Menu.gdshader
+res://Game.tscn

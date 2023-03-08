@@ -3,14 +3,14 @@ extends StaticBody2D
 var score = 0
 var new_position = Vector2.ZERO
 var dying = false
-export var time_appear = 0.5
-export var time_fall = 0.8
-export var time_rotate = 1.0
-export var time_a = 0.8
-export var time_s = 1.2
-export var time_v = 1.5
+@export var time_appear = 0.5
+@export var time_fall = 0.8
+@export var time_rotate = 1.0
+@export var time_a = 0.8
+@export var time_s = 1.2
+@export var time_v = 1.5
 
-export var sway_amplitude = 3.0
+@export var sway_amplitude = 3.0
 
 var colors = [
 	Color8(224,49,49)
@@ -43,7 +43,7 @@ func _ready():
 	elif score >= 40: color_index = 6
 	else: color_index = 7
 	$ColorRect.color = colors[color_index]
-	color_initial_position = $ColorRect.rect_position
+	color_initial_position = $ColorRect.position
 	color_randomizer = Vector2(randf()*6-3.0, randf()*6-3.0)
 
 
@@ -60,7 +60,7 @@ func _physics_process(_delta):
 			color_completed = true
 		var pos_x = (sin(Global.sway_index)*(sway_amplitude + color_randomizer.x))
 		var pos_y = (cos(Global.sway_index)*(sway_amplitude + color_randomizer.y))
-		$ColorRect.rect_position = Vector2(color_initial_position.x + pos_x, color_initial_position.y + pos_y)
+		$ColorRect.position = Vector2(color_initial_position.x + pos_x, color_initial_position.y + pos_y)
 	
 
 func hit(_ball):

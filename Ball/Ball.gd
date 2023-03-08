@@ -8,11 +8,11 @@ var time_highlight_size = 0.3
 
 var wobble_period = 0.0
 var wobble_amplitude = 0.0
-export var wobble_max = 5
+@export var wobble_max = 5
 var wobble_direction = Vector2.ZERO
 var decay_wobble = 0.15
 
-export var distort_effect = 0.0002
+@export var distort_effect = 0.0002
 
 var h_rotate = 0.0
 
@@ -22,7 +22,7 @@ var initial_velocity = Vector2.ZERO
 
 func _ready():
 	contact_monitor = true
-	contacts_reported = 8
+	max_contacts_reported = 8
 	if Global.level < 0 or Global.level >= len(Levels.levels):
 		Global.end_game(true)
 	else:
@@ -87,7 +87,7 @@ func comet():
 	h_rotate = wrapf(h_rotate+0.01, 0, 1)
 	var comet_container = get_node_or_null("/root/Game/Comet_Container")
 	if comet_container != null:
-		var sprite = $Images/Sprite.duplicate()
+		var sprite = $Images/Sprite2D.duplicate()
 		sprite.global_position = global_position
 		sprite.modulate.s = 0.6
 		sprite.modulate.h = h_rotate
