@@ -34,5 +34,5 @@ Power-ups, etc.
 
 ## Created by 
 
-Jason Francis
+Deryk Tibbs
 ```
